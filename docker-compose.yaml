@@ -21,8 +21,8 @@ services:
       - "8503:8503"
 
     # VARIÁVEIS DE AMBIENTE: Carrega variáveis de ambiente do seu arquivo .env
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
     
     # Nome do container
     container_name:
