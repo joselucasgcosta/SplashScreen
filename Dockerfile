@@ -5,13 +5,7 @@ FROM python:3.13-slim
 WORKDIR /app
 
 # Instalar pacotes do sistema (inclui locales)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    locales \
-    openjdk-17-jdk \
-    wget \
-    ca-certificates \
-    unzip \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends
 
 # Copiar arquivos necessários
 COPY . .
