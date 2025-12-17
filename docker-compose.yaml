@@ -1,0 +1,33 @@
+# version: '3.8' # Versão da especificação do Docker Compose
+
+services:
+  # Nome do seu serviço
+  splash:
+
+    # CONSTRUÇÃO DA IMAGEM: Diz ao Compose para construir a imagem usando o Dockerfile
+    build:
+      context: . # O contexto é o diretório atual onde está o Dockerfile
+      dockerfile: Dockerfile
+    
+    # MONTANDO VOLUME: Mapeia o código local para dentro do contêiner.
+    # Isso permite que as alterações no seu computador sejam vistas no contêiner instantaneamente (ideal para desenvolvimento).
+    volumes:
+      - .:/app # Mapeia o diretório local (ponto atual) para o diretório /app dentro do contêiner
+    
+    # PORTAS: Mapeia uma porta do seu computador (host) para uma porta no contêiner.
+    # Use esta seção se a sua aplicação for um servidor web (como FastAPI, Flask, etc.)
+    #    - Porta_do_Host:Porta_do_Container
+    ports:
+      - "8503:8503"
+
+    # VARIÁVEIS DE AMBIENTE: Carrega variáveis de ambiente do seu arquivo .env
+    env_file:
+      - .env
+    
+    # Nome do container
+    container_name:
+      splash
+      
+    # COMANDO DE EXECUÇÃO: Sobrescreve o comando padrão no Dockerfile se necessário.
+    # Exemplo para rodar um servidor Python com recarregamento (hot reload):
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
