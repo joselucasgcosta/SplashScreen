@@ -51,9 +51,11 @@ HTML_SEM_BORDA = """
 </html>
 """
 
+
 @app.route('/')
 def app_com_preload():
     return render_template_string(HTML_SEM_BORDA)
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8524)
+    app.run(host='0.0.0.0', port=8503)
