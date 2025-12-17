@@ -7,7 +7,7 @@ HTML_SEM_BORDA = """
 <html>
 <head>
     <title>Farmix Online</title>
-    <link rel="icon" href="https://i.ibb.co/BD68Zgp/favicon-portal.png" type="image/x-icon">
+    <link rel="icon" href="https://i.ibb.co/TDzCBdXz/favicon.png" type="image/x-icon">
     <style>
         html, body {
             margin: 0;
